@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 #include "includes/DataTypes.h"
 
 static void file_to_str(const char* filePath, char* outputStr, int outputLen)

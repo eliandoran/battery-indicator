@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1518973816 source:/media/storage/Software Development/C/Battery Indicator/BatteryIndicator/ColorCodes.c
+	<ncurses.h>
+	"includes/DataTypes.h"
+
+1518975824 /media/storage/Software Development/C/Battery Indicator/BatteryIndicator/includes/DataTypes.h
+	<ncurses.h>
+
+1518975225 source:/media/storage/Software Development/C/Battery Indicator/BatteryIndicator/DataGrabber.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<stdbool.h>
+	"includes/DataTypes.h"
+
+1518975243 source:/media/storage/Software Development/C/Battery Indicator/BatteryIndicator/main.c
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<locale.h>
+	<libintl.h>
+	<ncurses.h>
+	<time.h>
+	"includes/DataTypes.h"
+	"includes/DataGrabber.h"
+	"includes/ColorCodes.h"
+
+1518975327 /media/storage/Software Development/C/Battery Indicator/BatteryIndicator/includes/DataGrabber.h
+
+1518973741 /media/storage/Software Development/C/Battery Indicator/BatteryIndicator/includes/ColorCodes.h
+
