@@ -1,8 +1,9 @@
 #ifndef _DATA_GRABBER
 #define _DATA_GRABBER 1
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
-#include "include/DataTypes.h"
+#include "includes/DataTypes.h"
 
 static void file_to_str(const char* filePath, char* outputStr, int outputLen)
 {

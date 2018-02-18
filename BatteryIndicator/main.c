@@ -12,9 +12,9 @@
 #include <libintl.h>
 #include <ncurses.h>
 #include <time.h>
-#include "include/DataTypes.h"
-#include "include/DataGrabber.h"
-#include "include/ColorCodes.h"
+#include "includes/DataTypes.h"
+#include "includes/DataGrabber.h"
+#include "includes/ColorCodes.h"
 
 const int connector_w = 3;
 const int scale_w = 3, scale_padding = 1;
@@ -266,7 +266,7 @@ void load_batteries()
 	unsigned i;
 	int batt_h = 12,
 		batt_padding = 2;
-			
+
 	batteries.count = 1;
 	batteries.items = (BATTERY*)malloc(sizeof(BATTERY) * batteries.count);
 
@@ -333,7 +333,7 @@ int main()
 		blink_time += wait_delay;
 		refresh_time += wait_delay;
 	}
-	
+
 	release();
 	return EXIT_SUCCESS;
 }
