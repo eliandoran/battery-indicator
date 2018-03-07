@@ -2,13 +2,11 @@
 #include <ncurses.h>
 #include <string.h>
 #include "../includes/DataTypes.h"
-#include "../includes/DataGrabber.h"
 #include "../includes/ColorCodes.h"
 #include "../includes/ncurses_utils.h"
 #include "../includes/drawing.h"
 
 const int info_padding = 1;
-short blinking_percentage = 15;
 
 void draw_info(BATTERY* batt)
 {
@@ -134,17 +132,4 @@ void print_info_section(BATTERY* batt, unsigned colmax, const char* section)
 	wprintw(batt->infoWin, "%-*s", colmax, section);
 	wprintw(batt->infoWin, ": ");
 	wattroff(batt->infoWin, A_BOLD);
-}
-
-void update_info(BATTERY* batt)
-{	
-	get_battery_info(batt, false);	
-	
-	redraw_info(batt);
-
-	batt->is_blinking = (batt->info->capacity <= blinking_percentage);
-	//batt->is_blinking = true;
-	
-	if (!batt->is_blinking)	
-		draw_level(batt);			
 }

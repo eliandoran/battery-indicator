@@ -22,6 +22,8 @@ unsigned refresh_delay = 900,
 		 blink_delay   = 1000,
 		 wait_delay    = 100;
 
+short blinking_percentage = 15;
+
 BATTERY_LIST batteries;
 
 void enable_colors() {
@@ -114,6 +116,19 @@ void load_batteries()
 		update_info(batt);				
 		update_blink_status(batt);
 	}
+}
+
+void update_info(BATTERY* batt)
+{	
+	get_battery_info(batt, false);	
+	
+	redraw_info(batt);
+
+	batt->is_blinking = (batt->info->capacity <= blinking_percentage);
+	//batt->is_blinking = true;
+	
+	if (!batt->is_blinking)	
+		draw_level(batt);			
 }
 
 int main()
