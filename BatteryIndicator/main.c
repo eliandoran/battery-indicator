@@ -107,8 +107,11 @@ void load_batteries()
 		batt->id = 0;
 		batt->is_blinking = false;
 		batt->blinked = true;
-		batt->battRect = (RECT){ 2 + batt_h * i + batt_padding * i, 7, 11, batt_h };
-		batt->batteryWin = new_window(batt->battRect, true);
+		batt->battRect = (RECT){ 2 + batt_h * i + batt_padding * i, 7, 11, batt_h };		
+		
+		init_connector(batt);
+		init_scale(batt);
+		init_level(batt);
 		
 		draw_scale(batt);
 		draw_info(batt);
