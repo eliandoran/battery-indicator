@@ -1,6 +1,6 @@
 #include <ncurses.h>
-#include "../includes/DataTypes.h"
-#include "../includes/ColorCodes.h"
+#include "../includes/types.h"
+#include "../includes/color.h"
 #include "../includes/utils.h"
 
 const int connector_w = 3;

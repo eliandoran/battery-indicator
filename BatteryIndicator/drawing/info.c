@@ -1,8 +1,8 @@
 #include <libintl.h>
 #include <ncurses.h>
 #include <string.h>
-#include "../includes/DataTypes.h"
-#include "../includes/ColorCodes.h"
+#include "../includes/types.h"
+#include "../includes/color.h"
 #include "../includes/utils.h"
 #include "../includes/drawing.h"
 

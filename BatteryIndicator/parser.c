@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "includes/DataTypes.h"
+#include "includes/types.h"
 #include "includes/utils.h"
 
 void get_battery_info(BATTERY* batt, bool capacity_by_design)

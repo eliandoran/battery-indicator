@@ -11,9 +11,9 @@
 #include <locale.h>
 #include <libintl.h>
 #include <ncurses.h>
-#include "includes/DataTypes.h"
-#include "includes/DataGrabber.h"
-#include "includes/ColorCodes.h"
+#include "includes/types.h"
+#include "includes/parser.h"
+#include "includes/color.h"
 #include "includes/utils.h"
 #include "includes/drawing.h"
 

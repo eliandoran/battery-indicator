@@ -1,5 +1,5 @@
 #include <ncurses.h>
-#include "includes/DataTypes.h"
+#include "includes/types.h"
 
 #define PAIR_BEST  7
 #define PAIR_NEUTRAL  8
