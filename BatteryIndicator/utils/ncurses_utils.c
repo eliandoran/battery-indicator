@@ -1,6 +1,6 @@
 #include <ncurses.h>
-#include "includes/DataTypes.h"
-#include "includes/ColorCodes.h"
+#include "../includes/DataTypes.h"
+#include "../includes/ColorCodes.h"
 
 WINDOW* new_window(RECT rect, bool draw_border)
 {

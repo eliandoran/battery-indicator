@@ -3,7 +3,7 @@
 #include <string.h>
 #include "../includes/DataTypes.h"
 #include "../includes/ColorCodes.h"
-#include "../includes/ncurses_utils.h"
+#include "../includes/utils.h"
 #include "../includes/drawing.h"
 
 const int info_padding = 1;

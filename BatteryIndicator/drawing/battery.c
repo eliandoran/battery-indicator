@@ -1,7 +1,7 @@
 #include <ncurses.h>
 #include "../includes/DataTypes.h"
 #include "../includes/ColorCodes.h"
-#include "../includes/ncurses_utils.h"
+#include "../includes/utils.h"
 
 const int connector_w = 3;
 const int scale_w = 3, scale_padding = 1;
