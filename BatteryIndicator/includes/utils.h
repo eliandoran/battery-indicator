@@ -4,3 +4,7 @@ void enable_colors();
 
 // utils/time_utils.c
 void sleep_ms(int delay);
+
+// utils/file_utils.c
+void file_to_str(const char* filePath, char* outputStr, int outputLen);
+int file_to_int(const char* filePath);
