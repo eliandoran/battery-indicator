@@ -5,7 +5,7 @@
 #include "../includes/DataGrabber.h"
 #include "../includes/ColorCodes.h"
 #include "../includes/ncurses_utils.h"
-#include "drawing.h"
+#include "../includes/drawing.h"
 
 const int info_padding = 1;
 short blinking_percentage = 15;

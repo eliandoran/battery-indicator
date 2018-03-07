@@ -16,7 +16,7 @@
 #include "includes/DataGrabber.h"
 #include "includes/ColorCodes.h"
 #include "includes/ncurses_utils.h"
-#include "drawing/drawing.h"
+#include "includes/drawing.h"
 
 unsigned refresh_delay = 900,
 		 blink_delay   = 1000,
