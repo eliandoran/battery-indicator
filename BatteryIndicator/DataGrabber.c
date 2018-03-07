@@ -39,20 +39,20 @@ void get_battery_info(BATTERY* batt, bool capacity_by_design)
 	sprintf(path, path_fmt, batt->id, "model_name");
 	file_to_str(path, result->model_name, MODEL_LENGTH);
 
-	// Charge Now
-	sprintf(path, path_fmt, batt->id, "charge_now");
-	result->charge_now = file_to_int(path);
+	// Energy Now
+	sprintf(path, path_fmt, batt->id, "energy_now");
+	result->energy_now = file_to_int(path);
 
-	// Charge Full
-	sprintf(path, path_fmt, batt->id, "charge_full");
-	result->charge_full = file_to_int(path);
+	// Energy Full
+	sprintf(path, path_fmt, batt->id, "energy_full");
+	result->energy_full = file_to_int(path);
 
-	// Charge Full Design
-	sprintf(path, path_fmt, batt->id, "charge_full_design");
-	result->charge_full_design = file_to_int(path);
+	// Energy Full Design
+	sprintf(path, path_fmt, batt->id, "energy_full_design");
+	result->energy_full_design = file_to_int(path);
 
 	// Battery Wear
-	result->battery_wear = ((float)(result->charge_full_design - result->charge_full) / result->charge_full_design) * 100;
+	result->battery_wear = ((float)(result->energy_full_design - result->energy_full) / result->energy_full_design) * 100;
 
 	// Voltage Now
 	sprintf(path, path_fmt, batt->id, "voltage_now");
@@ -75,7 +75,7 @@ void get_battery_info(BATTERY* batt, bool capacity_by_design)
 	file_to_str(path, result->serial_no, SERIAL_NO_LENGTH);
 
 	// Capacity
-	result->capacity = ((float)result->charge_now / (float)(capacity_by_design ? result->charge_full_design : result->charge_full)) * 100;
+	result->capacity = ((float)result->energy_now / (float)(capacity_by_design ? result->energy_full_design : result->energy_full)) * 100;
 
 	// State
 	char status[50];

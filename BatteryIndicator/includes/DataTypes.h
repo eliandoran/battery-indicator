@@ -23,9 +23,9 @@ typedef struct {
 typedef struct {
     char manufacturer[MANUFACTURER_LENGTH];
     char model_name[MODEL_LENGTH];
-    int charge_now;
-    int charge_full;
-    int charge_full_design;
+    int energy_now;
+    int energy_full;
+    int energy_full_design;
     float battery_wear;
     int voltage_now;
     int voltage_min_design;

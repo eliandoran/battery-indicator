@@ -175,7 +175,7 @@ void update_info(BATTERY* batt)
 	rows[3] = gettext("Voltage");
 	rows[4] = gettext("Cycle Count");
 	rows[5] = gettext("Serial Number");
-	rows[6] = gettext("Current Charge");
+	rows[6] = gettext("Current Energy");
 	rows[7] = gettext("Technology");
 
 	int colmax=strlen(rows[0]), i;
@@ -238,9 +238,9 @@ void update_info(BATTERY* batt)
 		wprintw(batt->infoWin, "%s\n", batt->info->serial_no);
 	}
 
-	// Current Charge
+	// Current Energy
 	print_info_section(batt, colmax, rows[6]);
-	wprintw(batt->infoWin, "%d mA / %d mA\n", batt->info->charge_now / 1000, batt->info->charge_full / 1000);
+	wprintw(batt->infoWin, "%d mWh / %d mWh\n", batt->info->energy_now / 1000, batt->info->energy_full / 1000);
 
 	// Technology
 	print_info_section(batt, colmax, rows[7]);
