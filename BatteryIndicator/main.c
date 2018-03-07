@@ -107,11 +107,20 @@ void draw_info(BATTERY* batt)
 	batt->infoWin = new_window(batt->infoRect, false);
 }
 
+void enable_colors() {
+	if (!has_colors())
+		return;
+		
+	use_default_colors();	
+	start_color();	
+	init_colors();
+}
+
 void init()
 {
 	setlocale(LC_ALL, "");
 	initscr();
-	start_color(); init_colors();
+	enable_colors();	
 	cbreak();
 	noecho();
 	keypad(stdscr, true);
