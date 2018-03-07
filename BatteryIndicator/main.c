@@ -324,8 +324,14 @@ int main()
 
 	init();
 	load_batteries();
+	
+	for (i=0, batt=&batteries.items[i]; i<batteries.count; i++) {
+		batt->blinked = true;
+		update_blink_status(batt);
+	}
+	
 	char ch;
-	while (ch=getch(), ch != 27 && ch != 'q') {
+	while (ch=getch(), ch != 27 && ch != 'q') {				
 		if (blink_time >= blink_delay) {
 			for (i=0, batt=&batteries.items[i]; i<batteries.count; i++)
 				update_blink_status(batt);
