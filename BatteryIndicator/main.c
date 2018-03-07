@@ -274,28 +274,6 @@ void sleep_ms(int delay)
 	nanosleep(&sleep_ts, NULL);
 }
 
-void load_batteries()
-{
-	unsigned i;
-	int batt_h = 12,
-		batt_padding = 2;
-
-	batteries.count = 1;
-	batteries.items = (BATTERY*)malloc(sizeof(BATTERY) * batteries.count);
-
-	BATTERY* batt;
-	for (i=0, batt=&batteries.items[i]; i<batteries.count; i++) {
-		batt->id = 0;
-		batt->blinked = batt->is_blinking = false;
-		batt->battRect = (RECT){ 2 + batt_h * i + batt_padding * i, 7, 11, batt_h };
-		batt->batteryWin = new_window(batt->battRect, true);
-		draw_scale(batt);
-		draw_info(batt);
-		draw_connector(batt);
-		update_info(batt);
-	}
-}
-
 void update_blink_status(BATTERY* batt)
 {
 	if (batt->is_blinking) {
@@ -318,6 +296,31 @@ void update_blink_status(BATTERY* batt)
 	}
 }
 
+void load_batteries()
+{
+	unsigned i;
+	int batt_h = 12,
+		batt_padding = 2;
+
+	batteries.count = 1;
+	batteries.items = (BATTERY*)malloc(sizeof(BATTERY) * batteries.count);
+
+	BATTERY* batt;
+	for (i=0, batt=&batteries.items[i]; i<batteries.count; i++) {
+		batt->id = 0;
+		batt->is_blinking = false;
+		batt->blinked = true;
+		batt->battRect = (RECT){ 2 + batt_h * i + batt_padding * i, 7, 11, batt_h };
+		batt->batteryWin = new_window(batt->battRect, true);
+		
+		draw_scale(batt);
+		draw_info(batt);
+		draw_connector(batt);
+		update_info(batt);				
+		update_blink_status(batt);
+	}
+}
+
 int main()
 {
 	unsigned refresh_time = 0,
@@ -327,11 +330,6 @@ int main()
 
 	init();
 	load_batteries();
-	
-	for (i=0, batt=&batteries.items[i]; i<batteries.count; i++) {
-		batt->blinked = true;
-		update_blink_status(batt);
-	}
 	
 	char ch;
 	while (ch=getch(), ch != 27 && ch != 'q') {				
