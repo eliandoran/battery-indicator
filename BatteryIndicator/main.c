@@ -11,7 +11,6 @@
 #include <locale.h>
 #include <libintl.h>
 #include <ncurses.h>
-#include <time.h>
 #include "includes/DataTypes.h"
 #include "includes/DataGrabber.h"
 #include "includes/ColorCodes.h"
@@ -50,16 +49,6 @@ void release()
 		delwin(batt->batteryWin);
 	}
 	endwin();
-}
-
-void sleep_ms(int delay)
-{
-	const struct timespec sleep_ts = {
-		delay / 1000,
-		(delay % 1000) * 1000000
-	};
-
-	nanosleep(&sleep_ts, NULL);
 }
 
 void update_blink_status(BATTERY* batt)
