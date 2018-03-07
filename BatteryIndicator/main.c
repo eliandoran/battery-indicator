@@ -101,7 +101,7 @@ void draw_info(BATTERY* batt)
 	batt->infoRect = (RECT){
 		batt->battRect.top + 1,
 		batt->battRect.left + batt->battRect.width + info_padding,
-		35, 15
+		40, 15
 	};
 
 	batt->infoWin = new_window(batt->infoRect, false);
