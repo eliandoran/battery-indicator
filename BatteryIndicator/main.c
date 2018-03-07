@@ -304,14 +304,17 @@ void update_blink_status(BATTERY* batt)
 		if (batt->blinked) {
 			werase(batt->batteryWin); 
 			werase(batt->connectorWin);
+			werase(batt->scaleWin);
 		} else {
 			box(batt->batteryWin, 0, 0);
 			draw_level(batt);
-			draw_connector(batt);			
+			draw_connector(batt);
+			draw_scale(batt);			
 		}
 				
 		wrefresh(batt->batteryWin);
 		wrefresh(batt->connectorWin);
+		wrefresh(batt->scaleWin);
 	}
 }
 
