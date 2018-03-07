@@ -88,7 +88,7 @@ void draw_level(BATTERY* batt)
 		wattron(batt->batteryWin, color);
 		for (j=0; j < batt->battRect.width - 2; j++)
 		{
-			waddch(batt->batteryWin, (i >= lvl ? 'x' : ' '));
+			waddch(batt->batteryWin, (i >= lvl ? ACS_BOARD : ' '));
 		}
 		wattroff(batt->batteryWin, color);
 	}
