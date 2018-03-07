@@ -26,15 +26,6 @@ short blinking_percentage = 15;
 
 BATTERY_LIST batteries;
 
-void enable_colors() {
-	if (!has_colors())
-		return;
-		
-	use_default_colors();	
-	start_color();	
-	init_colors();
-}
-
 void init()
 {
 	setlocale(LC_ALL, "");
