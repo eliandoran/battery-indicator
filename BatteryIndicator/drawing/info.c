@@ -8,7 +8,7 @@
 
 const int info_padding = 1;
 
-void draw_info(BATTERY* batt)
+void init_info(BATTERY* batt)
 {
 	batt->infoRect = (RECT){
 		batt->battRect.top + 1,
@@ -19,7 +19,7 @@ void draw_info(BATTERY* batt)
 	batt->infoWin = new_window(batt->infoRect, false);
 }
 
-void redraw_info(BATTERY* batt)
+void draw_info(BATTERY* batt)
 {
 	bool newline = false;
 	int len, color;

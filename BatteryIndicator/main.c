@@ -112,9 +112,9 @@ void load_batteries()
 		init_connector(batt);
 		init_scale(batt);
 		init_level(batt);
+		init_info(batt);
 		
-		draw_scale(batt);
-		draw_info(batt);
+		draw_scale(batt);		
 		draw_connector(batt);
 		update_info(batt);				
 		update_blink_status(batt);
@@ -125,7 +125,7 @@ void update_info(BATTERY* batt)
 {	
 	get_battery_info(batt, false);	
 	
-	redraw_info(batt);
+	draw_info(batt);
 
 	batt->is_blinking = (batt->info->capacity <= blinking_percentage);
 	//batt->is_blinking = true;
