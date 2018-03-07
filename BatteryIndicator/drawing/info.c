@@ -4,7 +4,7 @@
 #include "../includes/DataTypes.h"
 #include "../includes/DataGrabber.h"
 #include "../includes/ColorCodes.h"
-#include "../ncurses_utils.h"
+#include "../includes/ncurses_utils.h"
 #include "drawing.h"
 
 const int info_padding = 1;
