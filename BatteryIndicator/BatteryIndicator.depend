@@ -3,17 +3,17 @@
 	<ncurses.h>
 	"includes/DataTypes.h"
 
-1518975824 /media/storage/Software Development/C/Battery Indicator/BatteryIndicator/includes/DataTypes.h
+1520451086 /media/storage/Software Development/C/Battery Indicator/BatteryIndicator/includes/DataTypes.h
 	<ncurses.h>
 
-1518975225 source:/media/storage/Software Development/C/Battery Indicator/BatteryIndicator/DataGrabber.c
+1520451086 source:/media/storage/Software Development/C/Battery Indicator/BatteryIndicator/DataGrabber.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 	<stdbool.h>
 	"includes/DataTypes.h"
 
-1518975243 source:/media/storage/Software Development/C/Battery Indicator/BatteryIndicator/main.c
+1520451099 source:/media/storage/Software Development/C/Battery Indicator/BatteryIndicator/main.c
 	<stdlib.h>
 	<stdbool.h>
 	<string.h>

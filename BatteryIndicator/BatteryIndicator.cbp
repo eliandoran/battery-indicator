@@ -31,6 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Linker>
+			<Add library="ncurses" />
+		</Linker>
+		<Unit filename="ColorCodes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="DataGrabber.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="includes/ColorCodes.h" />
+		<Unit filename="includes/DataGrabber.h" />
+		<Unit filename="includes/DataTypes.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
