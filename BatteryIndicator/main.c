@@ -23,8 +23,8 @@ int levels, level_percentage;
 short blinking_percentage = 15;
 
 unsigned refresh_delay = 900,
-		 blink_delay   = 500,
-		 wait_delay    = 150;
+		 blink_delay   = 1000,
+		 wait_delay    = 100;
 
 BATTERY_LIST batteries;
 
@@ -80,7 +80,7 @@ void draw_level(BATTERY* batt)
 	unsigned short cur_level = (int)(batt->info->capacity / level_percentage),
 				   lvl = levels - cur_level,
 				   i, j;
-	int color;
+	int color;	
 
 	for (i=0; i < levels; i++) {
 		wmove(batt->batteryWin, i+1, 1);
@@ -256,7 +256,11 @@ void update_info(BATTERY* batt)
 	wprintw(batt->infoWin, "%s\n", batt->info->technology);
 
 	batt->is_blinking = (batt->info->capacity <= blinking_percentage);
-	draw_level(batt);
+	//batt->is_blinking = true;
+	
+	if (!batt->is_blinking)	
+		draw_level(batt);
+		
 	wrefresh(batt->infoWin);
 }
 
@@ -298,18 +302,16 @@ void update_blink_status(BATTERY* batt)
 		batt->blinked = !batt->blinked;
 
 		if (batt->blinked) {
-			werase(batt->batteryWin);
+			werase(batt->batteryWin); 
 			werase(batt->connectorWin);
-			wrefresh(batt->batteryWin);
-			wrefresh(batt->connectorWin);
 		} else {
 			box(batt->batteryWin, 0, 0);
-			wrefresh(batt->batteryWin);
-			draw_connector(batt);
-			wrefresh(batt->connectorWin);
+			draw_level(batt);
+			draw_connector(batt);			
 		}
-
+				
 		wrefresh(batt->batteryWin);
+		wrefresh(batt->connectorWin);
 	}
 }
 
