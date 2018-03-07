@@ -21,20 +21,11 @@ void draw_info(BATTERY* batt)
 	batt->infoWin = new_window(batt->infoRect, false);
 }
 
-void print_info_section(BATTERY* batt, unsigned colmax, const char* section)
-{
-	wattron(batt->infoWin, A_BOLD);
-	wprintw(batt->infoWin, "%-*s", colmax, section);
-	wprintw(batt->infoWin, ": ");
-	wattroff(batt->infoWin, A_BOLD);
-}
-
-void update_info(BATTERY* batt)
+void redraw_info(BATTERY* batt)
 {
 	bool newline = false;
 	int len, color;
-
-	get_battery_info(batt, false);
+	
 	werase(batt->infoWin);
 
 	// Manufacturer
@@ -133,12 +124,27 @@ void update_info(BATTERY* batt)
 	// Technology
 	print_info_section(batt, colmax, rows[7]);
 	wprintw(batt->infoWin, "%s\n", batt->info->technology);
+	
+	wrefresh(batt->infoWin);
+}
+
+void print_info_section(BATTERY* batt, unsigned colmax, const char* section)
+{
+	wattron(batt->infoWin, A_BOLD);
+	wprintw(batt->infoWin, "%-*s", colmax, section);
+	wprintw(batt->infoWin, ": ");
+	wattroff(batt->infoWin, A_BOLD);
+}
+
+void update_info(BATTERY* batt)
+{	
+	get_battery_info(batt, false);	
+	
+	redraw_info(batt);
 
 	batt->is_blinking = (batt->info->capacity <= blinking_percentage);
 	//batt->is_blinking = true;
 	
 	if (!batt->is_blinking)	
-		draw_level(batt);
-		
-	wrefresh(batt->infoWin);
+		draw_level(batt);			
 }
