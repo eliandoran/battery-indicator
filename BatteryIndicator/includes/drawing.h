@@ -1,3 +1,5 @@
+#include "types.h"
+
 void init_connector(BATTERY* batt);
 void draw_connector(BATTERY* batt);
 

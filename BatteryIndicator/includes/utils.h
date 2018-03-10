@@ -1,3 +1,6 @@
+#include <ncurses.h>
+#include "types.h"
+
 // utils/ncurses_utils.c
 WINDOW* new_window(RECT rect, bool draw_border);
 void enable_colors();
