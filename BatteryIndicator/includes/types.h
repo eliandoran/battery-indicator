@@ -1,5 +1,5 @@
-#ifndef DATATYPES_H_INCLUDED
-#define DATATYPES_H_INCLUDED
+#ifndef TYPES_H_INCLUDED
+#define TYPES_H_INCLUDED
 
 #include <ncurses.h>
 
@@ -56,4 +56,4 @@ typedef struct {
     int count;
 } BATTERY_LIST;
 
-#endif // DATATYPES_H_INCLUDED
+#endif // TYPES_H_INCLUDED

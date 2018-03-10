@@ -1,3 +1,6 @@
+#ifndef DRAWING_H_INCLUDED
+#define DRAWING_H_INCLUDED
+
 #include "types.h"
 
 void init_connector(BATTERY* batt);
@@ -14,3 +17,5 @@ void draw_info(BATTERY* batt);
 
 void print_info_section(BATTERY* batt, unsigned colmax, const char* section);
 void update_info(BATTERY* batt);
+
+#endif // DRAWING_H_INCLUDED

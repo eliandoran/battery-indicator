@@ -1,3 +1,6 @@
+#ifndef UTILS_H_INCLUDED
+#define UTILS_H_INCLUDED
+
 #include <ncurses.h>
 #include "types.h"
 
@@ -11,3 +14,5 @@ void sleep_ms(int delay);
 // utils/file_utils.c
 void file_to_str(const char* filePath, char* outputStr, int outputLen);
 int file_to_int(const char* filePath);
+
+#endif // UTILS_H_INCLUDED
